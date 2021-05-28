@@ -1,0 +1,22 @@
+grammar -> statements eof ;
+
+statements -> statement statements
+           ->
+            ;
+
+statement -> Leftside '=' expr ';'
+          ->
+          ;
+
+expr -> expr '+' term
+     -> term
+     ;
+
+term -> term '*' factor
+     -> factor
+     ;
+
+factor -> id
+       -> '(' expr ')'
+       ;
+

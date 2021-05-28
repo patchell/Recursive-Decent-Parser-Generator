@@ -1,0 +1,25 @@
+grammar -> productions eof
+        -> eof
+		;
+	
+Productionws -> Production Productions
+			 ->
+			 ;
+	
+Production -> LHside RHsideList ';' ;
+	
+LHside -> id ;
+	
+RHsideList -> RHside RHsideList
+           ->
+		   ;
+	
+RHside -> '->' ObjList ; 
+		
+ObjList -> Object ObjList
+		->
+		;
+
+Object -> id
+       ->
+		;
